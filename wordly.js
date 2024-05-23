@@ -6,7 +6,11 @@ const word = words[Math.floor(Math.random() * words.length)];
 const life = 5;
 const letters = ['_', '_', '_', '_', '_'];
 for (let i = life; i > 0; i -= 1) {
-  const answer = readlineSync.question('Введите слово: ');
+  const answer = readlineSync.question('Введите слово из 5 букв: ');
+  if (answer.length > 5) {
+    console.log('Введенно слово больше 5 букв!');
+    break;
+  }
   if (answer.toLowerCase() === word) {
     console.log('Вы победили!');
     break;
